@@ -1,6 +1,6 @@
 # Coronium SkyTable Demo
 
-A performant and secure user scoped table datastore and client for use with Corona.
+A performant and secure user scoped table datastore and client for use with [Corona](https://coronalabs.com/).
 
 ## Documentation
 
