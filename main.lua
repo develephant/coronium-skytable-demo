@@ -1,9 +1,15 @@
+--#############################################################################
+--# Coronium SkyTable Demo
+--#############################################################################
 
 --#############################################################################
---# Coronium SkyTable
+--# Require plugin
 --#############################################################################
 local skytable = require("plugin.skytable")
 
+--#############################################################################
+--# Initialize SkyTable
+--#############################################################################
 skytable:init({
   user = "user@email.com",
   password = "userpw",
@@ -13,9 +19,16 @@ skytable:init({
   debug = true
 })
 
+--#############################################################################
+--# Open a "profile" SkyTable
+--#############################################################################
 local profile = skytable:open("profile")
 
+--#############################################################################
+--# Set Data
+--#############################################################################
 local function setData()
+  -- Create data object
   local d = {
     name = "Jimmy",
     active = true,
@@ -26,6 +39,7 @@ local function setData()
     }
   }
 
+  -- Set data on "profile" SkyTable
   profile:set(d, function(evt)
     if evt.isError then
       print(evt.error)
@@ -37,7 +51,11 @@ local function setData()
   end)
 end
 
+--#############################################################################
+--# Get Data
+--#############################################################################
 local function getData()
+  -- Get data from "profile" SkyTable
   profile:get(function(evt)
     if evt.isError then
       print(evt.error)
@@ -47,7 +65,11 @@ local function getData()
   end)
 end
 
+--#############################################################################
+--# Delete data
+--#############################################################################
 local function deleteData()
+  -- Delete data from "profile" SkyTable
   profile:delete(function(evt)
     if evt.isError then
       print(evt.error)
@@ -57,6 +79,9 @@ local function deleteData()
   end)
 end
 
+--#############################################################################
+--# Test Methods
+--#############################################################################
 --setData()
 --getData()
 --deleteData()
