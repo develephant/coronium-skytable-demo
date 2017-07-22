@@ -12,7 +12,6 @@ settings =
 		default = "portrait",
 		supported = { "portrait", },
 	},
-
   plugins =
   {
     ["plugin.skytable"] =
@@ -20,7 +19,13 @@ settings =
       publisherId = "com.develephant"
     },
   },
-
+	android =
+	{
+		usesPermissions =
+		{
+			"android.permission.INTERNET",
+		},
+	},
 	iphone =
 	{
 		plist =
